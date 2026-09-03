@@ -44,8 +44,7 @@ window.AkkedEntities = {
                     </div>
                   </div>
 
-                  <span class="badge badge-active" style="padding: 4px 10px; display: inline-flex; align-items: center; gap: 6px;">
-                    ${AkkedIcons.get('shield-check', { size: 13 })}
+                  <span class="badge badge-active" style="padding: 4px 10px;">
                     <span>${ent.trustScore}% ${isAr ? 'موثوق' : 'Verified'}</span>
                   </span>
                 </div>
@@ -53,8 +52,7 @@ window.AkkedEntities = {
 
                 <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; color: var(--text-muted);">
                   <span>${I18N.t('entityTotalShares')}: <strong>${ent.totalShares}</strong></span>
-                  <span style="color: var(--status-active); font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
-                    ${AkkedIcons.get('check', { size: 14, strokeWidth: 2.5 })}
+                  <span style="color: var(--status-active); font-weight: 700;">
                     <span>${isAr ? 'ممتثل لنظام حماية البيانات (PDPL)' : 'PDPL Compliant'}</span>
                   </span>
                 </div>

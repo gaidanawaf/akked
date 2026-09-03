@@ -46,7 +46,7 @@ window.AkkedWizard = {
           ${steps.map(s => `
             <div class="wizard-step-item ${this.currentStep === s.num ? 'active' : (this.currentStep > s.num ? 'completed' : '')}" onclick="AkkedWizard.goToStep(${s.num})">
               <div class="step-circle">
-                ${this.currentStep > s.num ? '✓' : s.num}
+                ${this.currentStep > s.num ? AkkedIcons.get('check', { size: 14, strokeWidth: 3 }) : s.num}
               </div>
               <span class="step-label">${s.label}</span>
             </div>
@@ -575,19 +575,8 @@ window.AkkedWizard = {
                    height="88" 
                    style="width: 64px; height: auto; display: block; object-fit: contain;">
             </picture>
-            <span class="badge badge-active" style="padding: 4px 10px; display: inline-flex; align-items: center; gap: 6px;">
-              <picture style="display: inline-flex; line-height: 0;">
-                <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                <img class="single-pulse-badge" 
-                     src="assets/checkmark-verified-mint.png" 
-                     alt="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     title="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     aria-label="${isAr ? 'تم التحقق' : 'Verified'}" 
-                     width="14" 
-                     height="14" 
-                     style="width: 14px; height: 14px; object-fit: contain;">
-              </picture>
-              <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
+            <span class="badge badge-active" style="padding: 4px 10px;">
+              ${isAr ? 'تم التحقق' : 'Verified'}
             </span>
           </div>
 

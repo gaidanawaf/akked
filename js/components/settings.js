@@ -69,8 +69,7 @@ window.AkkedSettings = {
               </div>
 
               <div style="display: flex; align-items: center; gap: 8px;">
-                <span class="badge badge-active" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px;">
-                  ${AkkedIcons.get('check', { size: 13, strokeWidth: 2.5 })}
+                <span class="badge badge-active" style="padding: 6px 12px;">
                   <span>${I18N.t('profileVerifiedStatus')}</span>
                 </span>
               </div>
@@ -246,7 +245,7 @@ window.AkkedSettings = {
                   <div class="theme-choice-info">
                     <div style="display: flex; align-items: center; justify-content: space-between;">
                       <strong style="color: var(--text-main); font-size: 0.95rem;">${I18N.t('themeLightName')}</strong>
-                      ${currentTheme === 'light' ? `<span class="badge badge-active">✓ ${isAr ? 'المفعل' : 'Active'}</span>` : ''}
+                      ${currentTheme === 'light' ? `<span class="badge badge-active">${isAr ? 'المفعل' : 'Active'}</span>` : ''}
                     </div>
                     <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
                       ${I18N.t('themeLightDesc')}
@@ -266,7 +265,7 @@ window.AkkedSettings = {
                   <div class="theme-choice-info">
                     <div style="display: flex; align-items: center; justify-content: space-between;">
                       <strong style="color: var(--text-main); font-size: 0.95rem;">${I18N.t('themeDarkName')}</strong>
-                      ${currentTheme === 'dark' ? `<span class="badge badge-active">✓ ${isAr ? 'المفعل' : 'Active'}</span>` : ''}
+                      ${currentTheme === 'dark' ? `<span class="badge badge-active">${isAr ? 'المفعل' : 'Active'}</span>` : ''}
                     </div>
                     <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
                       ${I18N.t('themeDarkDesc')}
@@ -335,8 +334,8 @@ window.AkkedSettings = {
               <!-- Voice Assistant & Microphone Listening Control -->
               <div class="settings-toggle-row">
                 <div class="toggle-text-area">
-                  <div class="toggle-title" style="display: inline-flex; align-items: center; gap: 6px;">
-                    <span style="font-size: 1.15rem;">🎙️</span>
+                  <div class="toggle-title" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <span style="color: var(--brand-primary); display: inline-flex; align-items: center;">${AkkedIcons.get('mic', { size: 18 })}</span>
                     <span>${I18N.t('accessMicVoiceAssistant')}</span>
                     <span class="badge badge-active" style="font-size: 0.72rem; padding: 2px 6px;">AI Mic Voice</span>
                   </div>
@@ -350,8 +349,8 @@ window.AkkedSettings = {
               <!-- Audio Speech Announcements on Entry -->
               <div class="settings-toggle-row">
                 <div class="toggle-text-area">
-                  <div class="toggle-title" style="display: inline-flex; align-items: center; gap: 6px;">
-                    <span style="font-size: 1.1rem;">🔊</span>
+                  <div class="toggle-title" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <span style="color: var(--brand-slate); display: inline-flex; align-items: center;">${AkkedIcons.get('volume', { size: 18 })}</span>
                     <span>${I18N.t('accessAudioAnnouncements')}</span>
                   </div>
                   <div class="toggle-desc">${I18N.t('accessAudioAnnouncementsDesc')}</div>
@@ -365,8 +364,8 @@ window.AkkedSettings = {
               <!-- External Notifications for Critical Sharing Requests -->
               <div class="settings-toggle-row">
                 <div class="toggle-text-area">
-                  <div class="toggle-title" style="display: inline-flex; align-items: center; gap: 6px;">
-                    <span style="font-size: 1.1rem;">🔔</span>
+                  <div class="toggle-title" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <span style="color: var(--brand-slate); display: inline-flex; align-items: center;">${AkkedIcons.get('bell', { size: 18 })}</span>
                     <span>${I18N.t('accessExternalNotifs')}</span>
                   </div>
                   <div class="toggle-desc">${I18N.t('accessExternalNotifsDesc')}</div>
@@ -412,8 +411,8 @@ window.AkkedSettings = {
                   </div>
                 </div>
 
-                <button class="btn btn-secondary" onclick="AkkedSettings.testSpeechAnnouncement()">
-                  <span style="font-size: 1rem;">🗣️</span>
+                <button class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;" onclick="AkkedSettings.testSpeechAnnouncement()">
+                  ${AkkedIcons.get('volume', { size: 16 })}
                   <span>${I18N.t('btnTestSpeech')}</span>
                 </button>
               </div>

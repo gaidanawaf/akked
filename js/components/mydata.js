@@ -98,8 +98,7 @@ window.AkkedMyData = {
 
               <div style="border-top: 1px solid var(--border-light); padding-top: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted);">
                 <span>${isAr ? 'المشاركات النشطة المرتبطة:' : 'Active Shares Linked:'} <strong>${cat.activeSharesCount}</strong></span>
-                <span style="color: var(--status-active); font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
-                  ${AkkedIcons.get('check', { size: 13, strokeWidth: 2.5 })}
+                <span style="color: var(--status-active); font-weight: 700;">
                   <span>${isAr ? 'محمي ومحجوب' : 'Protected'}</span>
                 </span>
               </div>

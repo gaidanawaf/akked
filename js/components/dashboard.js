@@ -46,8 +46,8 @@ window.AkkedDashboard = {
           <div class="card animate-fade-in" style="margin-bottom: 24px; border: 1.5px solid var(--brand-primary-border); background: linear-gradient(135deg, var(--brand-primary-light) 0%, var(--bg-card) 100%);">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 12px;">
               <div style="display: flex; align-items: center; gap: 10px;">
-                <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: var(--brand-primary); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
-                  🔔
+                <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: var(--brand-primary); color: #FFF; display: flex; align-items: center; justify-content: center;">
+                  ${AkkedIcons.get('bell', { size: 20 })}
                 </div>
                 <div>
                   <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--brand-primary); margin: 0;">
@@ -257,14 +257,8 @@ window.AkkedDashboard = {
                         </span>
                       </td>
                       <td>
-                        <span class="badge ${s.status === 'active' ? 'badge-active' : (s.status === 'expired' ? 'badge-expired' : 'badge-revoked')}" style="display: inline-flex; align-items: center; gap: 5px;">
-                          ${s.status === 'active' ? `
-                            <picture style="display: inline-flex; line-height: 0;">
-                              <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                              <img class="single-pulse-badge" src="assets/checkmark-verified-mint.png" alt="${isAr ? 'تم التحقق' : 'Verified'}" title="${isAr ? 'تم التحقق' : 'Verified'}" aria-label="${isAr ? 'تم التحقق' : 'Verified'}" width="12" height="12" style="width: 12px; height: 12px; object-fit: contain;">
-                            </picture>
-                            <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
-                          ` : (s.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
+                        <span class="badge ${s.status === 'active' ? 'badge-active' : (s.status === 'expired' ? 'badge-expired' : 'badge-revoked')}">
+                          ${s.status === 'active' ? (isAr ? 'تم التحقق' : 'Verified') : (s.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
                         </span>
                       </td>
                       <td>
@@ -294,14 +288,8 @@ window.AkkedDashboard = {
                       </picture>
                       <span>${isAr ? s.recipientNameAr : s.recipientNameEn}</span>
                     </div>
-                    <span class="badge ${s.status === 'active' ? 'badge-active' : (s.status === 'expired' ? 'badge-expired' : 'badge-revoked')}" style="display: inline-flex; align-items: center; gap: 4px;">
-                      ${s.status === 'active' ? `
-                        <picture style="display: inline-flex; line-height: 0;">
-                          <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-                          <img class="single-pulse-badge" src="assets/checkmark-verified-mint.png" alt="${isAr ? 'تم التحقق' : 'Verified'}" width="12" height="12" style="width: 12px; height: 12px; object-fit: contain;">
-                        </picture>
-                        <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
-                      ` : (s.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
+                    <span class="badge ${s.status === 'active' ? 'badge-active' : (s.status === 'expired' ? 'badge-expired' : 'badge-revoked')}">
+                      ${s.status === 'active' ? (isAr ? 'تم التحقق' : 'Verified') : (s.status === 'expired' ? I18N.t('statusExpired') : I18N.t('statusRevoked'))}
                     </span>
                   </div>
 

@@ -14,15 +14,11 @@ window.AkkedLanding = {
         <!-- Public Navigation Bar for Landing Page -->
         <header class="landing-nav-header">
           <div class="landing-nav-container">
-            <div class="landing-brand-area" onclick="AkkedApp.navigate('landing')">
+            <div class="landing-brand-area" onclick="AkkedApp.navigate('landing')" aria-label="${I18N.t('brandName')}">
               <picture style="display: inline-flex; line-height: 0;">
                 <source srcset="assets/akkid-logo.webp" type="image/webp">
-                <img src="assets/akkid-logo.png" alt="أكّد" class="landing-nav-logo" width="38" height="52" style="width: 38px; height: auto; object-fit: contain;">
+                <img src="assets/akkid-logo.png" alt="${I18N.t('brandName')}" class="landing-nav-logo" width="38" height="52" style="width: 38px; height: auto; object-fit: contain;">
               </picture>
-              <div class="landing-brand-text">
-                <span class="landing-brand-name">${I18N.t('brandName')}</span>
-                <span class="landing-brand-tagline">${I18N.t('brandTagline')}</span>
-              </div>
             </div>
 
             <nav class="landing-nav-links">

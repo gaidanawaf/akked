@@ -658,6 +658,12 @@ textarea:focus-visible,
   line-height: 1.2;
 }
 
+.badge-icon-only {
+  padding: 4px 8px;
+  justify-content: center;
+  min-width: 28px;
+}
+
 .badge-active {
   background-color: var(--status-active-bg);
   color: var(--status-active);

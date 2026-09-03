@@ -846,17 +846,17 @@ window.AkkedVoiceAssistant = {
         <div class="bar-actions-group">
           <!-- Ask Question Action -->
           <button class="bar-action-btn bar-btn-open" onclick="AkkedVoiceAssistant.openHUD(); AkkedVoiceAssistant.announceCurrentPageAndActions();" title="${isAr ? 'فحص الطلبات' : 'Check Requests'}">
-            <span>🎙️ ${isAr ? 'المساعد الصوتي (A)' : 'Voice Assistant (A)'}</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;">${AkkedIcons.get('mic', { size: 14 })} <span>${isAr ? 'المساعد الصوتي (A)' : 'Voice Assistant (A)'}</span></span>
           </button>
 
           <!-- Pause / Mute Control -->
           <button class="bar-action-btn ${isMuted ? 'bar-btn-resume' : 'bar-btn-pause'}" onclick="AkkedVoiceAssistant.toggleMute()" title="${isMuted ? (isAr ? 'استئناف الاستماع' : 'Resume Mic') : (isAr ? 'إيقاف مؤقت للمايك' : 'Pause Mic')}">
-            <span>${isMuted ? (isAr ? '▶️ استئناف' : '▶️ Resume') : (isAr ? '⏸️ إيقاف مؤقت' : '⏸️ Pause')}</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;">${AkkedIcons.get(isMuted ? 'play' : 'pause', { size: 13 })} <span>${isMuted ? (isAr ? 'استئناف' : 'Resume') : (isAr ? 'إيقاف مؤقت' : 'Pause')}</span></span>
           </button>
 
           <!-- Exit Accessibility Mode -->
           <button class="bar-action-btn bar-btn-exit" onclick="AkkedVoiceAssistant.exitAccessibilityMode()" title="${isAr ? 'الخروج من نمط الوصول الشامل' : 'Exit Universal Accessibility'}">
-            <span>❌ ${isAr ? 'الخروج' : 'Exit'}</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;">${AkkedIcons.get('close', { size: 14 })} <span>${isAr ? 'الخروج' : 'Exit'}</span></span>
           </button>
         </div>
       </div>
@@ -900,7 +900,7 @@ window.AkkedVoiceAssistant = {
 
             <div style="display: flex; gap: 6px;">
               <button class="voice-hud-icon-btn" onclick="AkkedVoiceAssistant.toggleMute()" title="${this.isMuted ? (isAr ? 'استئناف' : 'Resume') : (isAr ? 'إيقاف مؤقت' : 'Pause')}">
-                <span>${this.isMuted ? '▶️' : '⏸️'}</span>
+                ${AkkedIcons.get(this.isMuted ? 'play' : 'pause', { size: 14 })}
               </button>
               <button class="voice-hud-icon-btn" onclick="AkkedVoiceAssistant.closeHUD()" title="${isAr ? 'إغلاق' : 'Close'}">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -919,8 +919,9 @@ window.AkkedVoiceAssistant = {
                 ${isAr ? 'لتمكين التحكم الصوتي الكامل في خصوصيتك ومراجعة طلبات البيانات دون الحاجة للنقر، نحتاج إذن الوصول إلى المايكروفون. يمكنك أيضاً الضغط على زر A في أي وقت.' : 'To enable conversational privacy control without requiring manual clicks, Akked requests microphone permission. You can also press key A anytime.'}
               </p>
               <div style="display: flex; gap: 12px;">
-                <button class="btn btn-primary" style="flex: 1;" onclick="AkkedVoiceAssistant.grantMicPermission()">
-                  <span>${isAr ? 'السماح بتشغيل المايكروفون 🎙️' : 'Allow Microphone 🎙️'}</span>
+                <button class="btn btn-primary" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px;" onclick="AkkedVoiceAssistant.grantMicPermission()">
+                  ${AkkedIcons.get('mic', { size: 16 })}
+                  <span>${isAr ? 'السماح بتشغيل المايكروفون' : 'Allow Microphone'}</span>
                 </button>
                 <button class="btn btn-secondary" style="flex: 1;" onclick="AkkedVoiceAssistant.denyMicPermission()">
                   <span>${isAr ? 'متابعة بدون مايك (الوضع البصري)' : 'Continue Without Mic'}</span>
@@ -1011,8 +1012,9 @@ window.AkkedVoiceAssistant = {
                 </button>
               </div>
 
-              <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin: 6px 24px 16px;">
-                🗣️ ${isAr ? 'الأوامر الصوتية: "افتح المشاركات"، "اقرأ التنبيهات"، "انتقل إلى الطلب التالي"، "اشرح هذا الطلب"، "وافق"، "ارفض"، "ارجع للصفحة الرئيسية"' : 'Voice commands: "Open shares", "Read alerts", "Next request", "Explain this request", "Approve", "Reject", "Go home"'}
+              <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin: 6px 24px 16px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                ${AkkedIcons.get('mic', { size: 15 })}
+                <span>${isAr ? 'الأوامر الصوتية: "افتح المشاركات"، "اقرأ التنبيهات"، "انتقل إلى الطلب التالي"، "اشرح هذا الطلب"، "وافق"، "ارفض"، "ارجع للصفحة الرئيسية"' : 'Voice commands: "Open shares", "Read alerts", "Next request", "Explain this request", "Approve", "Reject", "Go home"'}</span>
               </div>
             ` : ''}
 
@@ -1028,35 +1030,35 @@ window.AkkedVoiceAssistant = {
                     <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">${isAr ? 'تتبع مسار التفويض المشفر حتى استلام التأكيد الرسمي' : 'Tracking encrypted authorization until official receipt'}</div>
                   </div>
                   <span class="badge ${state === 'COMPLETED' ? 'badge-active' : 'badge-warning'}">
-                    ${state === 'COMPLETED' ? (isAr ? 'تم استلام التأكيد الرسمي ✓' : 'Confirmed ✓') : (isAr ? 'جاري المعالجة والمتابعة...' : 'Processing...')}
+                    <span>${state === 'COMPLETED' ? (isAr ? 'تم استلام التأكيد الرسمي' : 'Confirmed') : (isAr ? 'جاري المعالجة والمتابعة...' : 'Processing...')}</span>
                   </span>
                 </div>
 
                 <!-- 4 Stages Timeline -->
                 <div class="monitoring-stepper-timeline">
                   <div class="monitoring-step-row ${step >= 1 ? (step === 1 && state === 'TRACKING' ? 'step-active' : 'step-passed') : 'step-pending'}">
-                    <div class="step-num-bubble">${step > 1 || state === 'COMPLETED' ? '✓' : '1'}</div>
+                    <div class="step-num-bubble">${step > 1 || state === 'COMPLETED' ? AkkedIcons.get('check', { size: 12, strokeWidth: 3 }) : '1'}</div>
                     <div class="step-content">
                       <div class="step-title">${isAr ? '1. فحص أمان الاتصال وتشفير الهوية' : '1. Security Handshake & Identity Encryption'}</div>
                     </div>
                   </div>
 
                   <div class="monitoring-step-row ${step >= 2 ? (step === 2 && state === 'TRACKING' ? 'step-active' : 'step-passed') : 'step-pending'}">
-                    <div class="step-num-bubble">${step > 2 || state === 'COMPLETED' ? '✓' : '2'}</div>
+                    <div class="step-num-bubble">${step > 2 || state === 'COMPLETED' ? AkkedIcons.get('check', { size: 12, strokeWidth: 3 }) : '2'}</div>
                     <div class="step-content">
                       <div class="step-title">${isAr ? '2. توليد تفويض مالي مشفر بحد أدنى (Zero-Exposure)' : '2. Zero-Exposure Token Derivation'}</div>
                     </div>
                   </div>
 
                   <div class="monitoring-step-row ${step >= 3 ? (step === 3 && state === 'TRACKING' ? 'step-active' : 'step-passed') : 'step-pending'}">
-                    <div class="step-num-bubble">${step > 3 || state === 'COMPLETED' ? '✓' : '3'}</div>
+                    <div class="step-num-bubble">${step > 3 || state === 'COMPLETED' ? AkkedIcons.get('check', { size: 12, strokeWidth: 3 }) : '3'}</div>
                     <div class="step-content">
                       <div class="step-title">${isAr ? '3. إرسال تفويض التجديد لمزود الخدمة' : '3. Submitting Renewal Authorization'}</div>
                     </div>
                   </div>
 
                   <div class="monitoring-step-row ${step >= 4 ? 'step-passed' : 'step-pending'}">
-                    <div class="step-num-bubble">${state === 'COMPLETED' ? '✓' : '4'}</div>
+                    <div class="step-num-bubble">${state === 'COMPLETED' ? AkkedIcons.get('check', { size: 12, strokeWidth: 3 }) : '4'}</div>
                     <div class="step-content">
                       <div class="step-title">${isAr ? '4. استلام التأكيد الرسمي وتوثيق العملية' : '4. Official Confirmation Received & Logged'}</div>
                     </div>
@@ -1077,7 +1079,7 @@ window.AkkedVoiceAssistant = {
             <!-- Completed Data Sharing State -->
             ${state === 'COMPLETED' && (!req || req.type !== 'subscription_renewal') ? `
               <div style="text-align: center; padding: 18px 24px 22px; background: rgba(13, 130, 91, 0.05); border: 1px solid rgba(13, 130, 91, 0.2); border-radius: var(--radius-md); margin: 0 24px 18px;">
-                <div style="color: var(--status-active); font-size: 1.8rem; margin-bottom: 6px;">✓</div>
+                <div style="color: var(--status-active); margin-bottom: 8px; display: flex; justify-content: center;">${AkkedIcons.get('check-circle', { size: 36 })}</div>
                 <strong style="color: var(--status-active); font-size: 1rem;">${isAr ? 'تمت معالجة الطلب وتوثيق الإثبات المشفر بنجاح' : 'Request Processed & Proof Verified'}</strong>
                 <div style="margin-top: 14px;">
                   <button class="btn btn-primary btn-sm" onclick="AkkedVoiceAssistant.closeHUD()">${isAr ? 'تم، إغلاق' : 'Done'}</button>
@@ -1088,7 +1090,7 @@ window.AkkedVoiceAssistant = {
             <!-- Rejected State -->
             ${state === 'REJECTED' ? `
               <div style="text-align: center; padding: 18px 24px 22px; background: rgba(220, 38, 38, 0.04); border: 1px solid rgba(220, 38, 38, 0.2); border-radius: var(--radius-md); margin: 0 24px 18px;">
-                <div style="color: var(--status-danger); font-size: 1.8rem; margin-bottom: 6px;">✕</div>
+                <div style="color: var(--status-danger); margin-bottom: 8px; display: flex; justify-content: center;">${AkkedIcons.get('x-circle', { size: 36 })}</div>
                 <strong style="color: var(--status-danger); font-size: 1rem;">${isAr ? 'تم رفض الطلب وحجب أي مشاركة بيانات فوراً' : 'Request Rejected & Access Blocked'}</strong>
                 <div style="margin-top: 14px;">
                   <button class="btn btn-secondary btn-sm" onclick="AkkedVoiceAssistant.closeHUD()">${isAr ? 'إغلاق' : 'Close'}</button>
