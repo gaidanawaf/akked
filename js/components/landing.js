@@ -42,6 +42,12 @@ window.AkkedLanding = {
                 <svg class="akked-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
               </button>
 
+              <!-- Share Platform Button -->
+              <button class="header-btn" onclick="AkkedApp.shareWebsite()" title="${isAr ? 'مشاركة المنصة' : 'Share Platform'}" aria-label="${isAr ? 'مشاركة المنصة' : 'Share Platform'}">
+                ${AkkedIcons.get('share', { size: 16 })}
+                <span>${isAr ? 'مشاركة المنصة' : 'Share Platform'}</span>
+              </button>
+
               <!-- Primary Launch CTA Button -->
               <button class="btn btn-primary landing-nav-cta" onclick="AkkedApp.navigate('dashboard')">
                 <span>${isAr ? 'لوحة التحكم' : 'Dashboard'}</span>
@@ -67,11 +73,6 @@ window.AkkedLanding = {
                      height="178">
               </picture>
             </div>
-
-            <!-- Strong Headline -->
-            <h1 class="landing-hero-title">
-              ${I18N.t('landingHeadline')}
-            </h1>
 
             <!-- Primary CTAs -->
             <div class="landing-hero-cta-group">

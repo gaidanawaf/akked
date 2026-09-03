@@ -1079,8 +1079,7 @@ window.AkkedVoiceAssistant = {
             <!-- Completed Data Sharing State -->
             ${state === 'COMPLETED' && (!req || req.type !== 'subscription_renewal') ? `
               <div style="text-align: center; padding: 18px 24px 22px; background: rgba(13, 130, 91, 0.05); border: 1px solid rgba(13, 130, 91, 0.2); border-radius: var(--radius-md); margin: 0 24px 18px;">
-                <div style="color: var(--status-active); margin-bottom: 8px; display: flex; justify-content: center;">${AkkedIcons.get('check-circle', { size: 36 })}</div>
-                <strong style="color: var(--status-active); font-size: 1rem;">${isAr ? 'تمت معالجة الطلب وتوثيق الإثبات المشفر بنجاح' : 'Request Processed & Proof Verified'}</strong>
+                <strong style="color: var(--status-active); font-size: 1.15rem; display: block; margin-bottom: 4px;">${isAr ? 'تم التحقق' : 'Verified'}</strong>
                 <div style="margin-top: 14px;">
                   <button class="btn btn-primary btn-sm" onclick="AkkedVoiceAssistant.closeHUD()">${isAr ? 'تم، إغلاق' : 'Done'}</button>
                 </div>

@@ -117,12 +117,14 @@ window.AkkedVerify = {
         <!-- Status Header Banner -->
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border-light);">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background-color: ${isValid ? 'var(--status-active-bg)' : 'var(--status-danger-bg)'}; color: ${isValid ? 'var(--status-active)' : 'var(--status-danger)'}; display: flex; align-items: center; justify-content: center; border: 1px solid ${isValid ? 'var(--status-active-border)' : 'var(--status-danger-border)'};">
-              ${AkkedIcons.get(isValid ? 'shield-check' : (isExpired ? 'clock' : 'ban'), { size: 22 })}
-            </div>
+            ${isValid ? '' : `
+              <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--status-danger-bg); color: var(--status-danger); display: flex; align-items: center; justify-content: center; border: 1px solid var(--status-danger-border);">
+                ${AkkedIcons.get(isExpired ? 'clock' : 'ban', { size: 22 })}
+              </div>
+            `}
             <div>
-              <div style="font-weight: 800; font-size: 1.15rem; color: var(--text-main);">
-                ${isValid ? I18N.t('claimStatusValid') : (isExpired ? I18N.t('claimStatusExpired') : I18N.t('claimStatusRevoked'))}
+              <div style="font-weight: 800; font-size: 1.15rem; color: ${isValid ? 'var(--status-active)' : 'var(--text-main)'};">
+                ${isValid ? (isAr ? 'تم التحقق' : 'Verified') : (isExpired ? I18N.t('claimStatusExpired') : I18N.t('claimStatusRevoked'))}
               </div>
               <div style="font-size: 0.8rem; color: var(--text-muted); font-family: monospace; display: flex; align-items: center; gap: 6px;">
                 <picture style="display: inline-flex; line-height: 0;">
@@ -236,9 +238,8 @@ window.AkkedVerify = {
         <div style="background-color: var(--brand-surface-tint); border-radius: var(--radius-md); padding: 16px; border: 1px solid var(--border-light); font-size: 0.82rem;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
             <span style="font-weight: 700; color: var(--text-main);">${I18N.t('dataIntegrityCheck')}</span>
-            <span style="color: var(--status-active); font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
-              ${AkkedIcons.get('check', { size: 14, strokeWidth: 2.5 })}
-              <span>${I18N.t('dataIntegrityPass')}</span>
+            <span style="color: var(--status-active); font-weight: 700;">
+              <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
             </span>
           </div>
           <div style="font-family: monospace; font-size: 0.76rem; color: var(--text-muted); word-break: break-all;">

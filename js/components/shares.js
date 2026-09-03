@@ -404,15 +404,8 @@ window.AkkedShares = {
             </span>
           </div>
 
-          <div class="proof-main-icon">
-            <picture style="display: inline-flex; line-height: 0;">
-              <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-              <img class="single-pulse-badge" src="assets/checkmark-verified-mint.png" alt="${isAr ? 'تم التحقق' : 'Verified'}" title="${isAr ? 'تم التحقق' : 'Verified'}" aria-label="${isAr ? 'تم التحقق' : 'Verified'}" width="38" height="38" style="width: 38px; height: 38px; object-fit: contain;">
-            </picture>
-          </div>
-
           <div class="proof-title">
-            ${isAr ? (share.id === 'DEMO-018' ? 'تم إثبات الأهلية' : 'إثبات معتمد وموثق') : 'Eligibility Proven'}
+            ${isAr ? 'تم التحقق' : 'Verified'}
           </div>
           <div class="proof-subtitle">
             ${isAr ? share.sharedClaimsAr : share.sharedClaimsEn}

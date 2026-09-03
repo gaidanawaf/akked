@@ -115,7 +115,7 @@ window.AkkedWizard = {
         <div style="display: flex; justify-content: flex-end; margin-top: 32px;">
           <button class="btn btn-primary btn-lg" onclick="AkkedWizard.nextStep()">
             <span>${isAr ? 'متابعة لاختيار الجهة والغرض' : 'Continue to Recipient & Purpose'}</span>
-            <span>${isAr ? '←' : '→'}</span>
+            ${AkkedIcons.get(isAr ? 'arrow-left' : 'arrow-right', { size: 16 })}
           </button>
         </div>
       </div>
@@ -205,12 +205,12 @@ window.AkkedWizard = {
         <!-- Footer Navigation -->
         <div style="display: flex; justify-content: space-between; margin-top: 32px;">
           <button class="btn btn-secondary" onclick="AkkedWizard.prevStep()">
-            <span>${isAr ? '→' : '←'}</span>
+            ${AkkedIcons.get(isAr ? 'arrow-right' : 'arrow-left', { size: 16 })}
             <span>${isAr ? 'السابق' : 'Back'}</span>
           </button>
           <button class="btn btn-primary btn-lg" onclick="AkkedWizard.nextStep()">
             <span>${isAr ? 'متابعة تقليص البيانات' : 'Continue to Minimization'}</span>
-            <span>${isAr ? '←' : '→'}</span>
+            ${AkkedIcons.get(isAr ? 'arrow-left' : 'arrow-right', { size: 16 })}
           </button>
         </div>
       </div>
@@ -344,12 +344,12 @@ window.AkkedWizard = {
         <!-- Footer Navigation -->
         <div style="display: flex; justify-content: space-between; margin-top: 32px;">
           <button class="btn btn-secondary" onclick="AkkedWizard.prevStep()">
-            <span>${isAr ? '→' : '←'}</span>
+            ${AkkedIcons.get(isAr ? 'arrow-right' : 'arrow-left', { size: 16 })}
             <span>${isAr ? 'السابق' : 'Back'}</span>
           </button>
           <button class="btn btn-primary btn-lg" onclick="AkkedWizard.nextStep()">
             <span>${isAr ? 'معاينة المقارنة التفاعلية' : 'Interactive Before/After Preview'}</span>
-            <span>${isAr ? '←' : '→'}</span>
+            ${AkkedIcons.get(isAr ? 'arrow-left' : 'arrow-right', { size: 16 })}
           </button>
         </div>
       </div>
@@ -425,12 +425,12 @@ window.AkkedWizard = {
         <!-- Footer Navigation -->
         <div style="display: flex; justify-content: space-between; margin-top: 32px;">
           <button class="btn btn-secondary" onclick="AkkedWizard.prevStep()">
-            <span>${isAr ? '→' : '←'}</span>
+            ${AkkedIcons.get(isAr ? 'arrow-right' : 'arrow-left', { size: 16 })}
             <span>${isAr ? 'السابق' : 'Back'}</span>
           </button>
           <button class="btn btn-primary btn-lg" onclick="AkkedWizard.nextStep()">
             <span>${isAr ? 'ضبط مدة الصلاحية والعلامة المائية' : 'Configure Expiry & Watermark'}</span>
-            <span>${isAr ? '←' : '→'}</span>
+            ${AkkedIcons.get(isAr ? 'arrow-left' : 'arrow-right', { size: 16 })}
           </button>
         </div>
       </div>
@@ -470,7 +470,7 @@ window.AkkedWizard = {
             </div>
           </div>
           <span class="badge badge-active" style="padding: 8px 16px; font-size: 0.9rem;">
-            ${AkkedIcons.get('check-circle', { size: 14 })} ${isAr ? 'اجتاز فحص الأمان بنجاح' : 'Passed Privacy Audit'}
+            ${isAr ? 'تم التحقق' : 'Verified'}
           </span>
         </div>
 
@@ -509,7 +509,7 @@ window.AkkedWizard = {
         <!-- Footer Navigation -->
         <div style="display: flex; justify-content: space-between; margin-top: 32px;">
           <button class="btn btn-secondary" onclick="AkkedWizard.prevStep()">
-            <span>${isAr ? '→' : '←'}</span>
+            ${AkkedIcons.get(isAr ? 'arrow-right' : 'arrow-left', { size: 16 })}
             <span>${isAr ? 'السابق' : 'Back'}</span>
           </button>
           <button class="btn btn-primary btn-lg" onclick="AkkedWizard.issueProof()">
@@ -542,20 +542,7 @@ window.AkkedWizard = {
 
     return `
       <div class="step-pane animate-fade-in" style="display: flex; flex-direction: column; align-items: center;">
-        <div style="margin-bottom: 14px; display: inline-flex; align-items: center; justify-content: center;">
-          <picture style="display: inline-flex; line-height: 0;">
-            <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-            <img class="single-pulse-badge" 
-                 src="assets/checkmark-verified-mint.png" 
-                 alt="${isAr ? 'تم التحقق' : 'Verified'}" 
-                 title="${isAr ? 'تم التحقق' : 'Verified'}" 
-                 aria-label="${isAr ? 'تم التحقق' : 'Verified'}" 
-                 width="48" 
-                 height="48" 
-                 style="width: 48px; height: 48px; object-fit: contain;">
-          </picture>
-        </div>
-        <h2 style="font-size: 1.6rem; font-weight: 900; color: var(--brand-primary); margin-bottom: 6px;">
+        <h2 style="font-size: 1.6rem; font-weight: 900; color: var(--brand-primary); margin-bottom: 6px; margin-top: 8px;">
           ${I18N.t('proofSuccessTitle')}
         </h2>
         <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 28px; text-align: center;">
@@ -580,22 +567,8 @@ window.AkkedWizard = {
             </span>
           </div>
 
-          <div class="proof-main-icon">
-            <picture style="display: inline-flex; line-height: 0;">
-              <source srcset="assets/checkmark-verified-mint.webp" type="image/webp">
-              <img class="single-pulse-badge" 
-                   src="assets/checkmark-verified-mint.png" 
-                   alt="${isAr ? 'تم التحقق' : 'Verified'}" 
-                   title="${isAr ? 'تم التحقق' : 'Verified'}" 
-                   aria-label="${isAr ? 'تم التحقق' : 'Verified'}" 
-                   width="38" 
-                   height="38" 
-                   style="width: 38px; height: 38px; object-fit: contain;">
-            </picture>
-          </div>
-
           <div class="proof-title">
-            ${isAr ? 'تم إثبات الأهلية' : 'Eligibility Proven'}
+            ${isAr ? 'تم التحقق' : 'Verified'}
           </div>
           <div class="proof-subtitle">
             ${isAr ? proof.sharedClaimsAr : proof.sharedClaimsEn}

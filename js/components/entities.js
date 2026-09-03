@@ -45,7 +45,7 @@ window.AkkedEntities = {
                   </div>
 
                   <span class="badge badge-active" style="padding: 4px 10px;">
-                    <span>${ent.trustScore}% ${isAr ? 'موثوق' : 'Verified'}</span>
+                    <span>${isAr ? 'تم التحقق' : 'Verified'}</span>
                   </span>
                 </div>
 

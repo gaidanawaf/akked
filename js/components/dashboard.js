@@ -20,7 +20,7 @@ window.AkkedDashboard = {
             ${I18N.t('introHeading')}
           </h1>
           
-          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 14px;">
+          <div class="intro-actions" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
             <button class="btn-intro-primary" onclick="AkkedApp.navigate('wizard')">
               <picture style="display: inline-flex; line-height: 0;">
                 <source srcset="assets/proof-doc-mint.webp" type="image/webp">
@@ -43,7 +43,7 @@ window.AkkedDashboard = {
 
         <!-- Pending Incoming Requests Banner (if any) -->
         ${AkkedState.getPendingRequests().length > 0 ? `
-          <div class="card animate-fade-in" style="margin-bottom: 24px; border: 1.5px solid var(--brand-primary-border); background: linear-gradient(135deg, var(--brand-primary-light) 0%, var(--bg-card) 100%);">
+          <div class="card pending-requests-card animate-fade-in" style="border: 1.5px solid var(--brand-primary-border); background: linear-gradient(135deg, var(--brand-primary-light) 0%, var(--bg-card) 100%);">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 12px;">
               <div style="display: flex; align-items: center; gap: 10px;">
                 <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: var(--brand-primary); color: #FFF; display: flex; align-items: center; justify-content: center;">
@@ -92,9 +92,9 @@ window.AkkedDashboard = {
         ` : ''}
 
         <!-- 4 KPI Stat Cards with Verified Vector Outline Icons -->
-        <div class="grid-container grid-cols-4" style="margin-bottom: 28px;">
+        <div class="grid-container grid-cols-4 dashboard-kpi-grid">
           <!-- Active Shares: Connected Share-Nodes Icon -->
-          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+          <div class="card dashboard-stat-card" style="display: flex; align-items: center;">
             <div class="stat-icon-container" style="background-color: var(--status-active-bg); border: 1px solid var(--status-active-border);" aria-label="${isAr ? 'المشاركات النشطة' : 'Active Shares'}" role="img">
               <picture style="display: flex; align-items: center; justify-content: center; line-height: 0;">
                 <source srcset="assets/share-nodes-mint.webp" type="image/webp">
@@ -108,24 +108,24 @@ window.AkkedDashboard = {
               </picture>
             </div>
             <div>
-              <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">${I18N.t('statActiveShares')}</div>
-              <div style="font-size: 1.65rem; font-weight: 800; color: var(--text-main); line-height: 1.2;">${activeShares.length}</div>
+              <div class="stat-label">${I18N.t('statActiveShares')}</div>
+              <div class="stat-value" style="color: var(--text-main);">${activeShares.length}</div>
             </div>
           </div>
 
           <!-- Expired Shares -->
-          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+          <div class="card dashboard-stat-card" style="display: flex; align-items: center;">
             <div class="stat-icon-container" style="background-color: var(--status-expired-bg); color: var(--status-expired); border: 1px solid var(--status-expired-border);">
               ${AkkedIcons.get('clock', { size: 22, strokeWidth: 2 })}
             </div>
             <div>
-              <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">${I18N.t('statExpiredShares')}</div>
-              <div style="font-size: 1.65rem; font-weight: 800; color: var(--text-main); line-height: 1.2;">${expiredShares.length}</div>
+              <div class="stat-label">${I18N.t('statExpiredShares')}</div>
+              <div class="stat-value" style="color: var(--text-main);">${expiredShares.length}</div>
             </div>
           </div>
 
           <!-- Organizations That Accessed Data -->
-          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+          <div class="card dashboard-stat-card" style="display: flex; align-items: center;">
             <div class="stat-icon-container" style="background-color: var(--brand-slate-light); border: 1px solid var(--brand-slate-border);" aria-label="${isAr ? 'الجهة الطالبة' : 'Requesting Organization'}" role="img">
               <picture>
                 <source srcset="assets/building-org-slate.webp" type="image/webp">
@@ -139,13 +139,13 @@ window.AkkedDashboard = {
               </picture>
             </div>
             <div>
-              <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">${I18N.t('statAccessedEntities')}</div>
-              <div style="font-size: 1.65rem; font-weight: 800; color: var(--text-main); line-height: 1.2;">${uniqueEntitiesCount}</div>
+              <div class="stat-label">${I18N.t('statAccessedEntities')}</div>
+              <div class="stat-value" style="color: var(--text-main);">${uniqueEntitiesCount}</div>
             </div>
           </div>
 
           <!-- Privacy Protection Score -->
-          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+          <div class="card dashboard-stat-card" style="display: flex; align-items: center;">
             <div class="stat-icon-container" style="background-color: var(--brand-primary-light); border: 1px solid var(--brand-primary-border);" aria-label="${isAr ? 'مؤشر حماية الخصوصية' : 'Privacy Protection Score'}" role="img">
               <picture>
                 <source srcset="assets/shield-check-purple.webp" type="image/webp">
@@ -158,8 +158,8 @@ window.AkkedDashboard = {
               </picture>
             </div>
             <div>
-              <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">${I18N.t('statPrivacyHealth')}</div>
-              <div style="font-size: 1.65rem; font-weight: 800; color: var(--brand-primary); line-height: 1.2;">${avgPrivacyScore}%</div>
+              <div class="stat-label">${I18N.t('statPrivacyHealth')}</div>
+              <div class="stat-value" style="color: var(--brand-primary);">${avgPrivacyScore}%</div>
             </div>
           </div>
         </div>
@@ -329,16 +329,16 @@ window.AkkedDashboard = {
               </h2>
             </div>
 
-            <div class="privacy-gauge-container" style="padding: 16px 0;">
+            <div class="privacy-gauge-container">
               <div class="gauge-svg-wrap">
-                <svg width="140" height="140" viewBox="0 0 140 140">
+                <svg width="130" height="130" viewBox="0 0 140 140">
                   <circle class="gauge-bg" cx="70" cy="70" r="58" stroke-width="12" fill="none" />
                   <circle class="gauge-progress" cx="70" cy="70" r="58" stroke-width="12" fill="none" 
                     stroke-dasharray="364.4" stroke-dashoffset="21.8" />
                 </svg>
                 <div class="gauge-value-text">94%</div>
               </div>
-              <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin-top: 14px;">
+              <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin-top: 8px;">
                 ${isAr ? 'مؤشر أمان عالي' : 'High Security Rating'}
               </div>
             </div>
