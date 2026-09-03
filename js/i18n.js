@@ -7,7 +7,7 @@ const translations = {
   ar: {
     // Brand
     brandName: 'أكّد',
-    brandTagline: 'أثبت المطلوب، واحفظ الباقي',
+    brandTagline: 'حارس البيانات الشخصية والموافقات',
     brandSub: 'حارس البيانات الشخصية والموافقات',
     provenOnly: 'تم إثبات الأهلية',
     noExtraData: 'لم تتم مشاركة أي بيانات إضافية',
@@ -338,8 +338,7 @@ const translations = {
     btnCloseVoice: 'إغلاق نافذة المساعد',
 
     // Landing Page
-    landingHeadline: 'أثبت المطلوب، واحفظ الباقي',
-    landingSubheadline: 'منصة الخصوصية الرائدة لتقليص مشاركة الوثائق وحماية الهوية؛ تتيح لك إثبات أهليتك واستحقاقك للجهات دون كشف بياناتك الحساسة أو إرسال مستنداتك الأصلية.',
+    landingHeadline: 'منصة أكّد',
     landingBtnLaunch: 'دخول لوحة التحكم — ابدأ الآن',
     landingBtnVerify: 'بوابة التحقق للجهات',
     
@@ -363,7 +362,7 @@ const translations = {
     landingCtaTitle: 'ابدأ اليوم في حماية بياناتك ووثائقك الشخصية',
     landingCtaDesc: 'انضم لمنصة أكد وجرّب الإفصاح الانتقائي الذكي بنقرة واحدة.',
     landingFooterRights: 'جميع الحقوق محفوظة لمنصة أكد © 2026',
-    landingFooterTagline: 'أثبت المطلوب، واحفظ الباقي.',
+    landingFooterTagline: 'منصة أكّد لحماية البيانات الشخصية.',
 
     // Toasts & Dialogs
     copiedToClipboard: 'تم نسخ الرابط إلى الحافظة بنجاح!',
@@ -379,7 +378,7 @@ const translations = {
   en: {
     // Brand
     brandName: 'Akked',
-    brandTagline: 'Prove what’s needed, protect the rest',
+    brandTagline: 'Personal Data & Consent Guardian',
     brandSub: 'Personal Data & Consent Guardian',
     provenOnly: 'Eligibility Proven',
     noExtraData: 'No extra data was shared',
@@ -711,8 +710,7 @@ const translations = {
     btnCloseVoice: 'Close Assistant',
 
     // Landing Page
-    landingHeadline: 'Prove what’s needed, protect the rest',
-    landingSubheadline: 'The privacy-first platform for credential minimization and identity preservation. Prove eligibility and credentials to organizations without exposing raw PII or sending unredacted documents.',
+    landingHeadline: 'Akked Platform',
     landingBtnLaunch: 'Launch Dashboard — Get Started',
     landingBtnVerify: 'Verifier Portal for Organizations',
 
@@ -736,7 +734,7 @@ const translations = {
     landingCtaTitle: 'Take Sovereign Control Over Your Personal Documents Today',
     landingCtaDesc: 'Experience seamless, purpose-limited data sharing powered by Akked.',
     landingFooterRights: 'All Rights Reserved. Akked Platform © 2026',
-    landingFooterTagline: 'Prove what’s needed, protect the rest.',
+    landingFooterTagline: 'Akked Privacy Platform.',
 
     // Toasts & Dialogs
     copiedToClipboard: 'Verification link copied to clipboard!',

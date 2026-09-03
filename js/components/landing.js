@@ -46,12 +46,6 @@ window.AkkedLanding = {
                 <svg class="akked-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
               </button>
 
-              <!-- Share Website Button -->
-              <button class="header-btn" onclick="AkkedApp.shareWebsite()" title="${isAr ? 'مشاركة رابط الموقع' : 'Share Website'}">
-                <svg class="akked-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                <span>${isAr ? 'مشاركة' : 'Share'}</span>
-              </button>
-
               <!-- Primary Launch CTA Button -->
               <button class="btn btn-primary landing-nav-cta" onclick="AkkedApp.navigate('dashboard')">
                 <span>${isAr ? 'لوحة التحكم' : 'Dashboard'}</span>
@@ -70,8 +64,8 @@ window.AkkedLanding = {
               <picture class="landing-hero-logo-wrap">
                 <source srcset="assets/akkid-logo.webp" type="image/webp">
                 <img src="assets/akkid-logo.png" 
-                     alt="منصة أكد - أثبت المطلوب، واحفظ الباقي" 
-                     title="منصة أكد" 
+                     alt="منصة أكّد" 
+                     title="منصة أكّد" 
                      class="landing-hero-logo-img"
                      width="130" 
                      height="178">
@@ -82,11 +76,6 @@ window.AkkedLanding = {
             <h1 class="landing-hero-title">
               ${I18N.t('landingHeadline')}
             </h1>
-
-            <!-- Concise Value Proposition -->
-            <p class="landing-hero-subtitle">
-              ${I18N.t('landingSubheadline')}
-            </p>
 
             <!-- Primary CTAs -->
             <div class="landing-hero-cta-group">
@@ -102,11 +91,6 @@ window.AkkedLanding = {
               <button class="btn btn-secondary landing-btn-hero-secondary" onclick="AkkedApp.navigate('verify')">
                 ${AkkedIcons.get('shield-check', { size: 19 })}
                 <span>${I18N.t('landingBtnVerify')}</span>
-              </button>
-
-              <button class="btn btn-secondary landing-btn-hero-secondary" onclick="AkkedApp.shareWebsite()" title="${isAr ? 'مشاركة رابط الموقع' : 'Share Website'}">
-                <svg class="akked-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                <span>${isAr ? 'مشاركة المنصة' : 'Share'}</span>
               </button>
             </div>
           </div>

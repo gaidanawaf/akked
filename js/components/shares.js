@@ -404,8 +404,8 @@ window.AkkedShares = {
             <picture style="display: block; line-height: 0;">
               <source srcset="assets/akkid-logo.webp" type="image/webp">
               <img src="assets/akkid-logo.png" 
-                   alt="أكّد - أثبت المطلوب، واحفظ الباقي" 
-                   title="أكّد - أثبت المطلوب، واحفظ الباقي" 
+                   alt="أكّد" 
+                   title="أكّد" 
                    class="official-akkid-logo" 
                    width="64" 
                    height="88" 
